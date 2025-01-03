@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+ <!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/lombok_demo_db</property>
+		<property name="hibernate.connection.username">root</property>
+
+		<property name="hibernate.connection.password">Shwetatech@8805</property>
+
+		<!-- Hibernate Settings -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+
+		<!-- Second-level cache settings -->
+		<!-- <property name="hibernate.cache.use_second_level_cache">true</property> 
+			<property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property> 
+			<property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property> 
+			<property name="hibernate.javax.cache.uri">ehcache.xml</property> -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+<property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+<property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+<property name="hibernate.javax.cache.uri">ehcache.xml</property>
+		
+		<!-- Mapping Resource -->
+		<!-- mapping resource="Customer.hbm.xml" / -->
+		<!-- mapping class="com.prowings.association.onetoone.Customer" /> <mapping 
+			class="com.prowings.association.onetoone.BankAccount" /> -->
+		<!-- mapping class="com.prowings.association.onetoone.bidirectional.Customer" 
+			/> <mapping class="com.prowings.association.onetoone.bidirectional.BankAccount" 
+			/> -->
+		<!-- mapping class="com.prowings.association.unidirectional.onetomany.Country" 
+			/> <mapping class="com.prowings.association.unidirectional.onetomany.State" 
+			/> -->
+		<!-- <mapping class="com.prowings.association.bidirectional.onetomany.Country" 
+			/> <mapping class="com.prowings.association.bidirectional.onetomany.State" 
+			/> -->
+		<!-- <mapping class="com.prowings.association.unidirectional.manytomany.Driver" 
+			/> <mapping class="com.prowings.association.unidirectional.manytomany.Vehicle" 
+			/> <mapping class="com.prowings.association.bidirectional.manytomany.Driver" 
+			/> <mapping class="com.prowings.association.bidirectional.manytomany.Vehicle" 
+			/> -->
+
+
+		<mapping class="lombokDemo.Person" />
+	</session-factory>
+</hibernate-configuration>
